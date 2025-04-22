@@ -14,21 +14,25 @@ RUN dpkg --add-architecture i386 \
         ca-certificates \
         curl \
         # Game dependencies
-        lib32gcc1 \
-        lib32stdc++6 \
-        lib32z1 \
-        libncurses5:i386 \
-        libbz2-1.0:i386 \
-        libcurl3-gnutls:i386 \
+        libgcc-s1 \
+        libgcc-s1:i386 \
+        libstdc++6 \
         libstdc++6:i386 \
-        libcurl4-gnutls-dev:i386 \
+        zlib1g \
+        zlib1g:i386 \
+        libncurses6 \
+        libncurses6:i386 \
+        libbz2-1.0 \
+        libbz2-1.0:i386 \
+        libcurl3-gnutls \
+        libcurl3-gnutls:i386 \
         # Game administration packages
         git \
         # Text editors
         vim-tiny \
         nano \
         # Network tools
-        conntrack dnsutils iproute2 netcat net-tools tcpdump \
+        conntrack dnsutils iproute2 netcat-openbsd net-tools tcpdump \
     && rm -rf /var/lib/apt/lists/* \
     && locale-gen en_US.UTF-8 \
     && curl -sqL "$STEAMCMD_AR_URL" | tar -zxvf -
